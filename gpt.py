@@ -79,7 +79,11 @@ def query_llm(prompt, json_data):
 # Streamlit UI
 st.title("Chat with AI AGENT")
 
-file_path = r"D:\\code of llm\\data.json"  # Replace with your actual JSON file path
+file_path = "data.json"
+
+with open(file_path, "r") as f:
+    data = json.load(f)
+
 json_text, json_data = load_json(file_path)
 
 if json_text:
